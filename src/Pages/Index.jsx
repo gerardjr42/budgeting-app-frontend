@@ -1,7 +1,12 @@
 import React from "react";
+import Transactions from "../Components/Transactions";
 
 const Index = () => {
-  return <div>Index</div>;
+  return (
+    <div>
+      <Transactions />
+    </div>
+  );
 };
 
 export default Index;
