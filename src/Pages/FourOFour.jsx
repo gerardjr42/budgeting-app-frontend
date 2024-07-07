@@ -1,7 +1,7 @@
 import React from "react";
 
 const FourOFour = () => {
-  return <div>FourOFour</div>;
+  return <div>Not Found</div>;
 };
 
 export default FourOFour;
