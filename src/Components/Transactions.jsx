@@ -43,9 +43,13 @@ const Transactions = () => {
           ${totalAmount}
         </h1>
       </div>
-      {transactions.map((transaction) => {
-        return <Transaction key={transaction.id} transaction={transaction} />;
-      })}
+      {Array.isArray(transactions) && transactions.length > 0 ? (
+        transactions.map((transaction) => {
+          return <Transaction key={transaction.id} transaction={transaction} />;
+        })
+      ) : (
+        <div>Error: No Transactions Found</div>
+      )}
     </div>
   );
 };

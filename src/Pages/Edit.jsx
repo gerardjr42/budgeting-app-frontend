@@ -3,10 +3,9 @@ import TransationEditForm from "../Components/TransactionEditForm";
 
 const Edit = () => {
   return (
-    <div>
-      Edit
+    <>
       <TransationEditForm />
-    </div>
+    </>
   );
 };
 

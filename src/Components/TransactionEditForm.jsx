@@ -60,12 +60,16 @@ const TransactionEditForm = () => {
     });
   };
   return (
-    <div>
-      Edit Transaction
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="itemName">
+    <div className="flex flex-col justify-center">
+      <h1 className="my-6 text-center text-5xl">Edit Transaction</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="ml-auto mr-auto flex flex-col text-start"
+      >
+        <label htmlFor="itemName" className="flex flex-col text-lg">
           Item Name:
           <input
+            className="border-2"
             type="text"
             id="itemName"
             value={transaction.itemName}
@@ -75,9 +79,11 @@ const TransactionEditForm = () => {
         </label>
         <br />
 
-        <label htmlFor="amount">
+        <label htmlFor="amount" className="flex flex-col text-lg">
           Amount:
           <input
+            className="appearance-none border-2"
+            style={{ WebkitAppearance: "none", MozAppearance: "textfield" }}
             type="number"
             id="amount"
             value={transaction.amount}
@@ -87,9 +93,10 @@ const TransactionEditForm = () => {
         </label>
         <br />
 
-        <label htmlFor="category">
+        <label htmlFor="category" className="flex flex-col text-lg">
           Category:
           <input
+            className="border-2"
             type="text"
             id="category"
             value={transaction.category}
@@ -99,9 +106,10 @@ const TransactionEditForm = () => {
         </label>
         <br />
 
-        <label htmlFor="from">
+        <label htmlFor="from" className="flex flex-col text-lg">
           From:
           <input
+            className="border-2"
             type="text"
             id="from"
             value={transaction.from}
@@ -111,9 +119,10 @@ const TransactionEditForm = () => {
         </label>
         <br />
 
-        <label htmlFor="date">
+        <label htmlFor="date" className="flex flex-col text-lg">
           Date:
           <input
+            className="border-2"
             type="date"
             id="date"
             value={transaction.date}
@@ -122,7 +131,9 @@ const TransactionEditForm = () => {
           />
         </label>
         <br />
-        <button>Submit</button>
+        <button className="my-4 border py-2 text-xs font-bold text-gray-500 hover:bg-blue-500 hover:text-white">
+          Submit
+        </button>
       </form>
     </div>
   );

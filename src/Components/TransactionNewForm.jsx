@@ -120,7 +120,7 @@ const TransactionNewForm = () => {
           />
         </label>
         <br />
-        <button className="my-4 border py-2 text-xs font-bold text-gray-500">
+        <button className="my-4 border py-2 text-xs font-bold text-gray-500 hover:bg-blue-500 hover:text-white">
           CREATE NEW ITEM
         </button>
       </form>

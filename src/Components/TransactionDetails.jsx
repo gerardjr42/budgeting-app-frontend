@@ -41,7 +41,7 @@ const TransactionDetails = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="my-6 text-center text-4xl">Transaction Details</h1>
+      <h1 className="my-6 text-center text-5xl">Transaction Details</h1>
       <div className="flex w-[20%] flex-col">
         <p className="mb-3 flex justify-between">
           Name:
