@@ -4,7 +4,6 @@ import TransactionDetails from "../Components/TransactionDetails";
 const Show = () => {
   return (
     <div>
-      Show
       <TransactionDetails />
     </div>
   );

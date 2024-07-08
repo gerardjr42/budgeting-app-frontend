@@ -48,12 +48,17 @@ const TransactionNewForm = () => {
   };
 
   return (
-    <div>
-      New Transaction
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="itemName">
+    <div className="flex flex-col justify-center">
+      <h1 className="text-center text-5xl">Add a new item</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="ml-auto mr-auto flex flex-col text-start"
+      >
+        <label htmlFor="itemName" className="flex flex-col text-lg">
+          <br />
           Item Name:
           <input
+            className="border-2"
             type="text"
             id="itemName"
             value={transaction.itemName}
@@ -63,9 +68,11 @@ const TransactionNewForm = () => {
         </label>
         <br />
 
-        <label htmlFor="amount">
+        <label htmlFor="amount" className="flex flex-col text-lg">
           Amount:
           <input
+            className="appearance-none border-2"
+            style={{ WebkitAppearance: "none", MozAppearance: "textfield" }}
             type="number"
             id="amount"
             value={transaction.amount}
@@ -75,9 +82,10 @@ const TransactionNewForm = () => {
         </label>
         <br />
 
-        <label htmlFor="category">
+        <label htmlFor="category" className="flex flex-col text-lg">
           Category:
           <input
+            className="border-2"
             type="text"
             id="category"
             value={transaction.category}
@@ -87,9 +95,10 @@ const TransactionNewForm = () => {
         </label>
         <br />
 
-        <label htmlFor="from">
+        <label htmlFor="from" className="flex flex-col text-lg">
           From:
           <input
+            className="border-2"
             type="text"
             id="from"
             value={transaction.from}
@@ -99,9 +108,10 @@ const TransactionNewForm = () => {
         </label>
         <br />
 
-        <label htmlFor="date">
+        <label htmlFor="date" className="flex flex-col text-lg">
           Date:
           <input
+            className="border-2"
             type="date"
             id="date"
             value={transaction.date}
@@ -110,7 +120,9 @@ const TransactionNewForm = () => {
           />
         </label>
         <br />
-        <button>Submit</button>
+        <button className="my-4 border py-2 text-xs font-bold text-gray-500">
+          CREATE NEW ITEM
+        </button>
       </form>
     </div>
   );

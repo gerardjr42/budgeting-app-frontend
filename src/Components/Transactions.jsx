@@ -29,21 +29,23 @@ const Transactions = () => {
 
   return (
     <div>
-      <h1>Transactions</h1>
+      <div className="mb-6 mt-6 flex justify-center text-5xl">
+        <h1 className="pr-2">Bank Account Total: </h1>{" "}
+        <h1
+          className={
+            totalAmount > 100
+              ? "text-green-500"
+              : totalAmount >= 0 && totalAmount <= 100
+                ? "text-yellow-500"
+                : "text-red-500"
+          }
+        >
+          ${totalAmount}
+        </h1>
+      </div>
       {transactions.map((transaction) => {
         return <Transaction key={transaction.id} transaction={transaction} />;
       })}
-      <p
-        className={
-          totalAmount > 100
-            ? "text-green-500"
-            : totalAmount >= 0 && totalAmount <= 100
-              ? "text-yellow-500"
-              : "text-red-500"
-        }
-      >
-        Total: ${totalAmount}
-      </p>
     </div>
   );
 };
