@@ -13,6 +13,7 @@ const TransactionDetails = () => {
     category: "",
     from: "",
     date: "",
+    type: "",
   });
 
   useEffect(() => {

@@ -10,7 +10,12 @@ const Transaction = ({ transaction }) => {
           <span className="ml-8 flex-grow text-sky-400 underline hover:text-blue-600">
             {transaction.itemName}{" "}
           </span>
-          <span>${transaction.amount}</span>
+          {/* <span>${transaction.amount}</span> */}
+          <span>
+            {transaction.type === "Withdrawal"
+              ? -transaction.amount
+              : transaction.amount}
+          </span>
         </div>
       </Link>
     </div>

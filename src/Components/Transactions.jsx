@@ -19,12 +19,21 @@ const Transactions = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  useEffect(() => {
-    let sum = 0;
+  const calculateTotalAmount = (transactions) => {
+    let total = 0;
     transactions.forEach((transaction) => {
-      sum += Number(transaction.amount);
+      if (transaction.type === "Withdrawal") {
+        total -= +transaction.amount;
+      } else if (transaction.type === "Deposit") {
+        total += +transaction.amount;
+      }
     });
-    setTotalAmount(sum);
+    return total;
+  };
+
+  useEffect(() => {
+    const total = calculateTotalAmount(transactions);
+    setTotalAmount(total);
   }, [transactions, setTotalAmount]);
 
   return (
