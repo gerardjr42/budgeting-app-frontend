@@ -12,7 +12,16 @@ const TransactionNewForm = () => {
     category: "",
     from: "",
     date: "",
+    type: "",
   });
+
+  const handleChecked = (e) => {
+    const { checked, id } = e.target;
+    setTransaction({
+      ...transaction,
+      type: checked && id === "Deposit" ? "Deposit" : "Withdrawal",
+    });
+  };
 
   const handleTextChange = (e) => {
     setTransaction({
@@ -30,6 +39,7 @@ const TransactionNewForm = () => {
       category: "",
       from: "",
       date: "",
+      type: "",
     });
   };
 
@@ -120,6 +130,32 @@ const TransactionNewForm = () => {
           />
         </label>
         <br />
+
+        <div className="flex justify-between self-center align-middle">
+          <label htmlFor="Deposit" className="mr-4 flex flex-row text-lg">
+            <p className="mr-2">Deposit:</p>
+            <input
+              className="border-2"
+              type="checkbox"
+              id="Deposit"
+              checked={transaction.type === "Deposit"}
+              onChange={handleChecked}
+            />
+          </label>
+          <br />
+          <label htmlFor="Withdrawal" className="flex flex-row text-lg">
+            <p className="mr-2">Withdrawal:</p>
+            <input
+              className="border-2"
+              type="checkbox"
+              id="Withdrawal"
+              checked={transaction.type === "Withdrawal"}
+              onChange={handleChecked}
+            />
+          </label>
+          <br />
+        </div>
+
         <button className="my-4 border py-2 text-xs font-bold text-gray-500 hover:bg-blue-500 hover:text-white">
           CREATE NEW ITEM
         </button>

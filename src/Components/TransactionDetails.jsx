@@ -59,9 +59,13 @@ const TransactionDetails = () => {
           From:
           <span className="ml-auto">{transaction.from}</span>
         </p>
-        <p className="mb-10 flex justify-between">
+        <p className="mb-3 flex justify-between">
           Date:
           <span className="ml-auto">{transaction.date}</span>
+        </p>
+        <p className="mb-10 flex justify-between">
+          Transaction Type:
+          <span className="ml-auto">{transaction.type}</span>
         </p>
         <div className="flex justify-center">
           <Link to={`/transactions/${id}/edit`}>
