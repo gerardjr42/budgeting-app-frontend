@@ -13,7 +13,7 @@ const Transactions = () => {
         return res.json();
       })
       .then((resJSON) => {
-        console.log(resJSON);
+        // console.log(resJSON);
         setTransactions(resJSON);
       })
       .catch((error) => console.error(error));

@@ -22,7 +22,7 @@ const TransactionEditForm = () => {
         return res.json();
       })
       .then((resJSON) => {
-        console.log(resJSON);
+        // console.log(resJSON);
         setTransaction(resJSON);
       })
       .catch((e) => console.error(e));
